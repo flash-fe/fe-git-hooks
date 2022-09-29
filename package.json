@@ -6,5 +6,29 @@
   "repository": "git@gitee.com:xiongxiong109/fe-git-hooks.git",
   "author": "jqxiong",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "type": "module",
+  "engines": {
+    "node": ">=14.20.1"
+  },
+  "bin": {
+    "jq-inject": "./bin/inject.js"
+  },
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "commander": "^9.4.0",
+    "dot-json": "^1.2.2",
+    "inquirer": "^9.1.2",
+    "update-notifier": "^6.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.0.1",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0"
+  },
+  "scripts": {
+    "lint": "eslint ./ --fix"
+  }
 }
