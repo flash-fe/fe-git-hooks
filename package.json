@@ -1,0 +1,10 @@
+{
+  "name": "@jqxiong/fe-git-hooks",
+  "version": "1.0.0",
+  "description": "git hooks tool for frontend",
+  "main": "index.js",
+  "repository": "git@gitee.com:xiongxiong109/fe-git-hooks.git",
+  "author": "jqxiong",
+  "license": "MIT",
+  "private": false
+}
