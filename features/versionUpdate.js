@@ -1,16 +1,14 @@
 import updateNotifier from 'update-notifier'
 import chalk from 'chalk'
-import handleRequire from '../utils/handleRequire.js'
-
-const pkg = handleRequire('../package.json')
+import pkgInfo from '../utils/pkgInfo.js'
 
 const notifier = updateNotifier({
-  pkg,
+  pkg: pkgInfo,
   updateCheckInterval: 300
 })
 
-function updateCheck() {
-  return new Promise(resolve => {
+function updateCheck () {
+  return new Promise((resolve) => {
     if (notifier.update) {
       console.log(
         `New version available: ${chalk.cyan(
@@ -24,6 +22,8 @@ Run ${chalk.cyan('npm i -g {packageName}')} to update`,
         defer: false
       })
 
+      resolve()
+    } else {
       resolve()
     }
   })
