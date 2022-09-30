@@ -2,6 +2,10 @@
 import fs from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
+import { createRequire } from 'module'
+
+const __dirname = fileURLToPath(path.dirname(import.meta.url))
+const require = createRequire(new URL(import.meta.url));
 
 // 拿项目文件
 export const getProjectConfFilePath = (fileNames = []) => {
@@ -13,10 +17,14 @@ export const getProjectConfFilePath = (fileNames = []) => {
 
 // 拿npm包自带的文件
 export const getDefaultConfFilePath = (filename) => {
-  const __dirname = fileURLToPath(path.dirname(import.meta.url))
   const targetFile = path.resolve(__dirname, '..', 'confs', filename)
   if (fs.existsSync(targetFile)) {
     return targetFile
   }
   return null
+}
+
+// 获取npm包自带的configJSON
+export const getDefaultConfigJSON = (filename) => {
+  return require(path.resolve(__dirname, '..', 'confs', filename))
 }
