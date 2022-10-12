@@ -5,7 +5,7 @@ import { fileURLToPath } from 'url'
 import { createRequire } from 'module'
 
 const __dirname = fileURLToPath(path.dirname(import.meta.url))
-const require = createRequire(new URL(import.meta.url));
+const require = createRequire(new URL(import.meta.url))
 
 // 拿项目文件
 export const getProjectConfFilePath = (fileNames = []) => {

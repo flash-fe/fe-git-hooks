@@ -1,6 +1,6 @@
 import { program } from 'commander'
 import versionUpdate from './features/versionUpdate.js'
-import pkgInfo from './utils/pkgInfo.js'
+import { pkgInfo } from './utils/pkgInfo.js'
 import initHooks from './features/initHooks.js'
 import initBranch from './features/initBranch.js'
 

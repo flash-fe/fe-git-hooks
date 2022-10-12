@@ -1,6 +1,6 @@
 import updateNotifier from 'update-notifier'
 import chalk from 'chalk'
-import pkgInfo from '../utils/pkgInfo.js'
+import { pkgInfo } from '../utils/pkgInfo.js'
 
 const notifier = updateNotifier({
   pkg: pkgInfo,

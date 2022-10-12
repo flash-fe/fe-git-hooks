@@ -6,6 +6,14 @@ import { resolve } from 'path'
 const __dirname = fileURLToPath(new URL('.', import.meta.url))
 const require = createRequire(import.meta.url)
 
-const pkgInfo = require(resolve(__dirname, '..', 'package.json'))
+// lib包的package.json
+export const pkgInfo = require(resolve(__dirname, '..', 'package.json'))
 
-export default pkgInfo
+// 项目的package.json
+export const getProjectPackageInfo = () => {
+  try {
+    return require(resolve('.', 'package.json'))
+  } catch (err) {
+    throw new Error(err)
+  }
+}

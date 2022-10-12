@@ -19,9 +19,8 @@
 
 #### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1. 如要注入hooks，确保当前项目为node项目(根目录有package.json)
+2. 如果已经安装了yorkie或husky, 会先尝试卸载，再安装指定版本
 
 #### 使用说明
 
