@@ -5,13 +5,22 @@
 
 #### 软件架构
 软件架构说明
+1. 使用`husky`注入git hooks;
+2. 给项目添加`commitlint`, `commitlizen`, `branchlint`, `eslint`;
+3. 使用`npe`给项目注入`scripts`脚本
+4. 提供`branch`命令
+5. 支持`npm`, `yarn`
 
+默认注入的git hooks：
+`pre-commit`：lint-staged
+`pre-push`：branchlint
+`commit-msg`：commitlint
+`post-merge`：install
 
 #### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+1. 如要注入hooks，确保当前项目为node项目(根目录有package.json)
+2. 如果已经安装了yorkie或husky, 会先尝试卸载，再安装指定版本
 
 #### 使用说明
 
