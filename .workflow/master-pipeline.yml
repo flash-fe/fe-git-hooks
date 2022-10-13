@@ -2,7 +2,7 @@ version: '1.0'
 name: master-pipeline
 displayName: MasterPipeline
 triggers:
-  trigger: auto
+  trigger: manual
   push:
     branches:
       include:
@@ -20,6 +20,8 @@ stages:
         commands:
           - '# access token'
           - npm config set //registry.npmjs.org/:_authToken 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
+          - '# access public'
+          - npm config set access public
           - '# 执行编译命令'
           - npm publish
         caches: []
