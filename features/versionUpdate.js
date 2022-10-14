@@ -1,6 +1,6 @@
-import updateNotifier from 'update-notifier'
-import chalk from 'chalk'
-import { pkgInfo } from '../utils/pkgInfo.js'
+const updateNotifier = require('update-notifier')
+const chalk = require('chalk')
+const { pkgInfo } = require('../utils/pkgInfo')
 
 const notifier = updateNotifier({
   pkg: pkgInfo,
@@ -29,4 +29,4 @@ Run ${chalk.cyan('npm i -g {packageName}')} to update`,
   })
 }
 
-export default updateCheck
+module.exports = updateCheck

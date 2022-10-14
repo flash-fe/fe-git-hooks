@@ -1,10 +1,16 @@
 # fe-git-hooks
 
-#### 介绍
-给前端的git项目一键注入hooks，包括lint-stage，commitlint，branchlint等。
+## 问题背景
+在团队协作开发前端工程化项目时，往往需要指定一定的流程规范。
+这个cli工具，可以帮助我们给前端的git项目一键注入hooks，快速完成对一个新项目或存量项目的流程规范注入。
 
-#### 软件架构
-软件架构说明
+注入完成后，项目将具备以下能力：
+
+1. 可通过`npm run commit`进行规范化代码提交;
+2. 可通过`npm run branch`创建规范化分支;
+3. 提交代码时，会通过`lint-stage`对代码进行规范化校验(也可在注入完成后替换自己的eslint规范)；并通过`commitlint`对`commit-msg`进行提交规范校验;
+4. push代码时，会通过`branchlint`对分支规范进行校验。
+## cli命令执行流程
 1. 使用`husky`注入git hooks;
 2. 给项目添加`commitlint`, `commitlizen`, `branchlint`, `eslint`;
 3. 使用`npe`给项目注入`scripts`脚本
@@ -17,30 +23,48 @@
 `commit-msg`：commitlint
 `post-merge`：install
 
-#### 安装教程
+## Quick Start
 
-1. 如要注入hooks，确保当前项目为node项目(根目录有package.json)
-2. 如果已经安装了yorkie或husky, 会先尝试卸载，再安装指定版本
+### Init Hooks for project
 
-#### 使用说明
+If you use Npm
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
+```bash
+npx @jqxiong/fe-git-hooks hooks
+```
 
-#### 参与贡献
+If you use Yarn
 
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+```bash
+npx @jqxiong/fe-git-hooks hooks -n yarn
+```
 
+### Create Branch
+```bash
+npm run branch
+```
 
-#### 特技
+or 
+```bash
+yarn branch
+```
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  Gitee 官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解 Gitee 上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是 Gitee 最有价值开源项目，是综合评定出的优秀开源项目
-5.  Gitee 官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  Gitee 封面人物是一档用来展示 Gitee 会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+### Create git commit
+```bash
+npm run commit
+```
+
+or
+```bash
+yarn commit
+```
+
+## 相关模块介绍
+
+[lint-staged](https://github.com/okonet/lint-staged#readme), 可以对diff的代码做校验
+
+[commitlint](https://commitlint.js.org/) 对commit-msg做规范校验
+
+[commitizen](https://github.com/commitizen/cz-cli) 通过命令行生成问询式，规范化的commit-msg
+
+[branchlint](https://github.com/shufo/branchlint#readme) 分支规范校验

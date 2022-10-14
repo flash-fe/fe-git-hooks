@@ -1,8 +1,8 @@
 // 移动文件
-import path from 'node:path'
-import fs from 'node:fs'
+const path = require('path')
+const fs = require('fs')
 
-import { getDefaultConfFilePath } from './getConfFilePath.js'
+const { getDefaultConfFilePath } = require('./getConfFilePath')
 
 function moveConfFile (conFile) {
   const filePath = getDefaultConfFilePath(conFile)
@@ -13,4 +13,4 @@ function moveConfFile (conFile) {
   }
 }
 
-export default moveConfFile
+module.exports = moveConfFile

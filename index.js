@@ -1,8 +1,8 @@
-import { program } from 'commander'
-import versionUpdate from './features/versionUpdate.js'
-import { pkgInfo } from './utils/pkgInfo.js'
-import initHooks from './features/initHooks.js'
-import initBranch from './features/initBranch.js'
+const { program } = require('commander')
+const versionUpdate = require('./features/versionUpdate')
+const { pkgInfo } = require('./utils/pkgInfo')
+const initHooks = require('./features/initHooks')
+const initBranch = require('./features/initBranch')
 
 // 查看版本
 program.version(pkgInfo.version)
