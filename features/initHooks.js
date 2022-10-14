@@ -1,11 +1,11 @@
-import path from 'node:path'
-import inquirer from 'inquirer'
-import DotJson from 'dot-json'
-import { execSync, getModuleDeps, install, installDevDepModule, uninstall } from '../utils/execDevModules.js'
-import { getDefaultConfigJSON } from '../utils/getConfFilePath.js'
-import { getProjectPackageInfo } from '../utils/pkgInfo.js'
-import moveConfFile from '../utils/moveConfFile.js'
-import initGitIfNeed from '../utils/initGitIfNeed.js'
+const path = require('path')
+const inquirer = require('inquirer')
+const DotJson = require('dot-json')
+const { execSync, getModuleDeps, install, installDevDepModule, uninstall } = require('../utils/execDevModules')
+const { getDefaultConfigJSON } = require('../utils/getConfFilePath')
+const { getProjectPackageInfo } = require('../utils/pkgInfo')
+const moveConfFile = require('../utils/moveConfFile')
+const initGitIfNeed = require('../utils/initGitIfNeed')
 
 let npmClient = 'npm'
 
@@ -160,4 +160,4 @@ const projectHandler = (options) => {
     })
 }
 
-export default projectHandler
+module.exports = projectHandler

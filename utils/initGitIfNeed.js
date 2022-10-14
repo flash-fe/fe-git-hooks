@@ -1,6 +1,6 @@
-import { join } from 'node:path'
-import { existsSync } from 'node:fs'
-import { spawnSync } from 'node:child_process'
+const { join } = require('path')
+const { existsSync } = require('fs')
+const { spawnSync } = require('child_process')
 
 const gitConfigPath = join('.', '.git')
 
@@ -15,4 +15,4 @@ const initGitIfNeed = () => {
   }
 }
 
-export default initGitIfNeed
+module.exports = initGitIfNeed

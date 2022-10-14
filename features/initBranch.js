@@ -1,8 +1,8 @@
-import fs from 'fs'
-import cp from 'child_process'
-import inquirer from 'inquirer'
-import initGitIfNeed from '../utils/initGitIfNeed.js'
-import { getDefaultConfFilePath, getProjectConfFilePath } from '../utils/getConfFilePath.js'
+const fs = require('fs')
+const cp = require('child_process')
+const inquirer = require('inquirer')
+const initGitIfNeed = require('../utils/initGitIfNeed')
+const { getDefaultConfFilePath, getProjectConfFilePath } = require('../utils/getConfFilePath')
 
 const branchConfs = [
   '.branchlintrc',
@@ -90,4 +90,4 @@ const branchHandler = (options, configInfo) => {
     })
 }
 
-export default initBranch
+module.exports = initBranch
