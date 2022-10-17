@@ -7,8 +7,6 @@ triggers:
     branches:
       include:
         - master
-variables:
-  PUBLISH_TOKEN: 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
 stages:
   - name: release
     displayName: 发布
