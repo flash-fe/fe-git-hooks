@@ -7,6 +7,9 @@ triggers:
     branches:
       include:
         - master
+variables:
+  global:
+    - PUBLISH_TOKEN
 stages:
   - name: release
     displayName: 发布
